@@ -1,0 +1,13 @@
+﻿@using Saas.SignupAdministration.Web
+@model IEnumerable<Saas.SignupAdministration.Web.Areas.Admin.Data.TenantViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="@SR.OrganizationNameAction" asp-controller="@SR.OnboardingWorkflowController" asp-area="">Create New</a>
+</p>
+@await Html.PartialAsync("_TenantListView", Model)

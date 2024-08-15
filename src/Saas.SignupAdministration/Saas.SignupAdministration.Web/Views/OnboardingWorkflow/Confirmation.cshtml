@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Create your Subscriber - Your Subscriber has been created!";
+}
+
+<div class="row" style="margin: 0 auto; max-width: 600px;">
+ <div class="col-12">
+  <div style="font-size:.75rem;">Step 5 of 5 - Tenant Deployed</div>
+  <div style="margin-top:.5rem;"><progress class="progress" id="file" value="100" max="100"> 100% </progress></div>
+ </div>
+</div>
+
+<div class="row" style="margin: 0 auto; max-width: 600px;">
+    <div class="col-12" style="margin-top: 1.5rem;">
+        <div style="color: green;">
+            <div style="float: left; margin-right: 15px;">
+                <i class="fas fa-check-circle" style="font-size: 2.5rem;"></i>
+            </div>
+            <div>
+                <h2>You're all set!</h2>
+            </div>
+        </div>
+
+        <div style="margin-top: 15px;">
+            <p>
+                Your Organization has been created!
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    //TODO (SaaS): This redirects to fetch a fresh user token with the new claims generated for the created tenant permission, 
+    // other persistence provider implementations may be able to transfer inter session information through other mechanisms
+    setTimeout(function () {
+        window.location.href = '@Url.Action("SignIn", "Account", new { area = "MicrosoftIdentity" })';
+    }, 3000);
+</script>

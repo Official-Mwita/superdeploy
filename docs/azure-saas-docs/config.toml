@@ -1,0 +1,48 @@
+baseURL = 'https://azure.github.io/azure-saas'
+title = 'Azure Saas Dev Kit(ASDK)'
+theme = "docsy"
+
+
+enableRobotsTXT = true
+enableGitInfo = true
+
+
+# Language configuration
+languageCode = "en-us"
+
+[languages]
+    [languages.en]
+    title = "Azure SaaS Dev Kit Docs"
+    contentDir = "content/en"
+    languageName ="English"
+    # Weight used for sorting.
+    weight = 1
+
+# Top Nav Bar
+[[menu.main]]
+    name = "Homepage"
+    weight = 40
+    url = "#"
+[[menu.main]]
+    name = "GitHub"
+    weight = 50
+    url = "https://github.com/Azure/azure-saas"
+
+
+[params]
+
+# Algolia
+algolia_docsearch = false
+offlineSearch = false
+
+# GitHub Information
+github_repo = "https://github.com/Azure/azure-saas"
+github_subdir = "docs/azure-saas-docs"
+github_branch = "main"
+
+[params.drawio]
+enable = false
+
+[security]
+  [security.funcs]
+    getenv = ['APPINSIGHTS_CONNECTION_STRING']

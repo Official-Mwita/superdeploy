@@ -1,0 +1,43 @@
+﻿
+
+@{
+	ViewData["Title"] = "Create your Subscriber - Give your Subscriber a Name";
+}
+
+<div class="row" style="margin: 0 auto; max-width: 600px;">
+ <div class="col-12">
+  <div style="font-size:.75rem;">Step 3 of 5 - Enter a Tenant Route Name</div>
+  <div style="margin-top:.5rem;"><progress class="progress" id="file" value="60" max="100"> 60% </progress></div>
+ </div>
+</div>
+
+<div class="row" style="margin: 0 auto; max-width: 600px;">
+ <div class="col-12" style="margin-top: 1.5rem;">
+  <div style="margin-bottom: 10px;">
+   <h3 style="margin-bottom: 0px;">Please choose a name for your custom Tenant Route</h3>
+  </div>
+  <form method="post">
+   <div style="margin-top: 1rem; margin-bottom: 1rem;">
+	<input type="text" name="tenantRouteName" class="form-control" placeholder="Start typing..." value="@ViewBag.TenantRouteName" required minlength="2" maxlength="44" pattern="[a-zA-Z0-9_' ]*$" />
+   </div>
+			@if (ViewBag.TenantRouteExists ?? false)
+			{
+	   <div>
+		<p style="color:#dc3545!important;"> Tenant Route '@ViewBag.TenantNameEntered' is already taken.</p>
+	   </div>
+			}
+   <div>
+	<p>Choose a unique route to use when accessing your tenant. You can change this later.</p>
+   </div>
+   <div style="margin-top: 1rem;">
+	<input type="hidden" name="Id" value="@ViewBag.Id" />
+	<input type="hidden" name="UserId" value="@ViewBag.UserId" />
+	<input type="hidden" name="IsExistingUser" value="@ViewBag.IsExistingUser" />
+	<input type="submit" class="btn btn-primary" style="width:44%;" value="BACK" formaction="TenantRouteNameBack" />
+	<input type="submit" class="btn btn-primary" style="width:44%;" value="NEXT" />
+   </div>
+  </form>
+ </div>
+</div>
+
+
